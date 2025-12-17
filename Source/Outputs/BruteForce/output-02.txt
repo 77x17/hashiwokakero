@@ -6,7 +6,7 @@
 [ "0" , "0" , "0" , "0" , "0" , "0" , "|" ]
 [ "1" , "-" , "-" , "-" , "-" , "-" , "2" ]
 
-[Backtracking STATS]
-Recursion calls   : 12103
-Time (ms)         : 19.02
+[BruteForce STATS]
+Expanded nodes    : 101511
+Time (ms)         : 359.04
 Total bridges     : 15

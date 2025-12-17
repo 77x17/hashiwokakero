@@ -56,18 +56,18 @@ def run_astar(puzzle, filename):
 
     renderer = Renderer(puzzle, bridges)
     renderer.draw()
-
-    print("\n[A* OUTPUT]\n")
-    renderer.print()
-
-    print("\n[A* STATS]")
-    print(f"Expanded states : {result['expanded']}")
-    print(f"Time (ms)       : {result['time_ms']:.2f}")
-    print(f"Total bridges   : {sum(result['bridges'].values())}")
+    # renderer.print()
 
     out = f"Outputs/AStar/{filename}"
     os.makedirs("Outputs/AStar", exist_ok=True)
     renderer.save(out)
+    
+    # 2. MỞ FILE CHẾ ĐỘ 'a' ĐỂ GHI THÊM STATS
+    with open(out, "a", encoding="utf-8") as f:
+        f.write("\n[A* STATS]\n")
+        f.write(f"Expanded states : {result['expanded']}\n")
+        f.write(f"Time (ms)       : {result['time_ms']:.2f}\n")
+        f.write(f"Total bridges   : {sum(result['bridges'].values())}\n")
 
 def run_pysat(puzzle, filename):
     print("\n" + "="*20 + " RUNNING PYSAT " + "="*20)
@@ -91,20 +91,20 @@ def run_pysat(puzzle, filename):
         
     renderer = Renderer(puzzle, result["bridges"])
     renderer.draw()
-
-    print("\n[PySAT OUTPUT]\n")
-    renderer.print()
-
-    print("\n[PySAT STATS]")
-    print(f"Variables       : {result['variables']}")
-    print(f"Clauses         : {result['clauses']}")
-    print(f"Time (ms)       : {result['time_ms']:.2f}")
-    total = sum(br.k for br in result["bridges"])
-    print(f"Total bridges   : {total}")
+    # renderer.print()
 
     out = f"Outputs/PySAT/{filename}"
     os.makedirs("Outputs/PySAT", exist_ok=True)
     renderer.save(out)
+    
+    total = sum(br.k for br in result["bridges"])
+    
+    # 2. MỞ FILE CHẾ ĐỘ 'a' ĐỂ GHI THÊM STATS
+    with open(out, "a", encoding="utf-8") as f:
+        f.write("\n[PySAT STATS]\n")
+        f.write(f"Variables         : {result['variables']}\n")
+        f.write(f"Time (ms)         : {result['time_ms']:.2f}\n")
+        f.write(f"Total bridges     : {total}\n")
     
 def run_backtracking(puzzle, filename):
     print("\n" + "="*20 + " RUNNING BACKTRACKING " + "="*20)
@@ -129,19 +129,19 @@ def run_backtracking(puzzle, filename):
 
     renderer = Renderer(puzzle, bridges)
     renderer.draw()
-
-    print("\n[Backtracking OUTPUT]")
-    renderer.print()
-
-    print("\n[Backtracking STATS]")
-    print(f"Recursion calls : {result['expanded']}") # Số lần gọi hàm đệ quy
-    print(f"Time (ms)       : {result['time_ms']:.2f}")
-    print(f"Total bridges   : {sum(result['bridges'].values())}")
+    # renderer.print()
 
     out = f"Outputs/Backtracking/{filename}"
     os.makedirs("Outputs/Backtracking", exist_ok=True)
     renderer.save(out)
     print(f"Saved result to: {out}")
+    
+    # 2. MỞ FILE CHẾ ĐỘ 'a' ĐỂ GHI THÊM STATS
+    with open(out, "a", encoding="utf-8") as f:
+        f.write("\n[Backtracking STATS]\n")
+        f.write(f"Recursion calls   : {result['expanded']}\n")
+        f.write(f"Time (ms)         : {result['time_ms']:.2f}\n")
+        f.write(f"Total bridges     : {sum(result['bridges'].values())}\n")
     
 def run_bruteforce(puzzle, filename):
     print("\n" + "="*20 + " RUNNING BRUTE FORCE " + "="*20)
@@ -164,19 +164,19 @@ def run_bruteforce(puzzle, filename):
     bridges = [Bridge(a, b, k) for (a, b), k in result["bridges"].items() if k > 0]
     renderer = Renderer(puzzle, bridges)
     renderer.draw()
+    # renderer.print()
 
-    print("\n[Backtracking OUTPUT]")
-    renderer.print()
-
-    print("\n[Backtracking STATS]")
-    print(f"Expanded nodes  : {result['expanded']}") # Số lần gọi hàm đệ quy
-    print(f"Time (ms)       : {result['time_ms']:.2f}")
-    print(f"Total bridges   : {sum(result['bridges'].values())}")
-
-    out = f"Outputs/Backtracking/{filename}"
-    os.makedirs("Outputs/Backtracking", exist_ok=True)
+    out = f"Outputs/BruteForce/{filename}"
+    os.makedirs("Outputs/BruteForce", exist_ok=True)
     renderer.save(out)
     print(f"Saved result to: {out}")
+    
+    # 2. MỞ FILE CHẾ ĐỘ 'a' ĐỂ GHI THÊM STATS
+    with open(out, "a", encoding="utf-8") as f:
+        f.write("\n[BruteForce STATS]\n")
+        f.write(f"Expanded nodes    : {result['expanded']}\n")
+        f.write(f"Time (ms)         : {result['time_ms']:.2f}\n")
+        f.write(f"Total bridges     : {sum(result['bridges'].values())}\n")
 
 if __name__ == "__main__":
     for i in range(1, 11):
