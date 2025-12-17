@@ -7,6 +7,6 @@
 [ "1" , "-" , "-" , "-" , "-" , "-" , "2" ]
 
 [PySAT STATS]
-Variables         : 39
-Time (ms)         : 0.06
+Variables         : 78
+Time (ms)         : 0.16
 Total bridges     : 15

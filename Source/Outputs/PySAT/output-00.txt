@@ -1,0 +1,8 @@
+[ "2" , "-" , "2" ]
+[ "|" , "0" , "|" ]
+[ "2" , "-" , "2" ]
+
+[PySAT STATS]
+Variables         : 24
+Time (ms)         : 0.08
+Total bridges     : 4

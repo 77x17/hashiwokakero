@@ -179,7 +179,7 @@ def run_bruteforce(puzzle, filename):
         f.write(f"Total bridges     : {sum(result['bridges'].values())}\n")
 
 if __name__ == "__main__":
-    for i in range(1, 11):
+    for i in range(0, 11):
         # Tạo tên file input và output
         input_file = f"input-{i:02d}.txt"
         output_file = f"output-{i:02d}.txt"
