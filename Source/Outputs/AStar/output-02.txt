@@ -7,6 +7,6 @@
 [ "1" , "-" , "-" , "-" , "-" , "-" , "2" ]
 
 [A* STATS]
-Expanded states : 5520
-Time (ms)       : 356.70
+Expanded states : 6338
+Time (ms)       : 304.84
 Total bridges   : 15

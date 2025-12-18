@@ -2,7 +2,7 @@
 [ "|" , "0" , "|" ]
 [ "2" , "-" , "2" ]
 
-[PySAT STATS]
-Variables         : 16
-Time (ms)         : 0.31
+[BruteForce STATS]
+Expanded nodes    : 44
+Time (ms)         : 0.36
 Total bridges     : 4

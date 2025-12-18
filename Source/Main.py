@@ -12,7 +12,7 @@ import time
 from func_timeout import func_timeout, FunctionTimedOut
 
 # Cấu hình thời gian tối đa cho mỗi thuật toán (tính bằng giây)
-TIMEOUT_SECONDS = 30 
+TIMEOUT_SECONDS = 60
 
 def bridge_candidates(puzzle):
     islands = list(puzzle.islands.keys())
@@ -181,7 +181,7 @@ def run_bruteforce(puzzle, filename):
 if __name__ == "__main__":
     for i in range(0, 11):
         # Tạo tên file input và output
-        input_file = f"input-{i:02d}.txt"
+        input_file  = f"input-{i:02d}.txt"
         output_file = f"output-{i:02d}.txt"
         
         input_path = f"Inputs/{input_file}"

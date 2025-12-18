@@ -2,7 +2,7 @@
 [ "|" , "0" , "|" ]
 [ "2" , "-" , "2" ]
 
-[PySAT STATS]
-Variables         : 16
-Time (ms)         : 0.31
+[Backtracking STATS]
+Recursion calls   : 11
+Time (ms)         : 0.14
 Total bridges     : 4
