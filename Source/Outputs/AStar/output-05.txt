@@ -9,7 +9,7 @@
 [ "|" , "0" , "0" , "0" , "0" , "|" , "0" , "1" , "0" , "|" ]
 [ "2" , "-" , "-" , "-" , "-" , "4" , "=" , "=" , "=" , "3" ]
 
-[Backtracking STATS]
-Recursion calls   : 35117
-Time (ms)         : 37.03
-Total bridges     : 23
+[A* STATS]
+Expanded states : 8972
+Time (ms)       : 311.85
+Total bridges   : 23

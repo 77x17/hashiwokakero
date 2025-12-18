@@ -54,17 +54,11 @@ class CNFGenerator:
         for a, b in combinations(islands, 2):
             if not self.valid_pair(a, b): continue
 
-            v0 = self.bridge_var(a, b, 0)
             v1 = self.bridge_var(a, b, 1)
             v2 = self.bridge_var(a, b, 2)
             
-            self.bridge_vars_cache[(a, b)] = (v0, v1, v2)
+            self.bridge_vars_cache[(a, b)] = (v1, v2)
 
-            # Chỉ chọn 1 trong 3 trạng thái {0, 1, 2}
-            self.cnf.append([v0, v1, v2])
-            self.cnf.append([-v0, -v1])
-            self.cnf.append([-v0, -v2])
-            self.cnf.append([-v1, -v2])
 
             # Tạo biến Exist đại diện cho việc "Có cầu nối giữa a và b"
             # Biến này rất quan trọng để check liên thông sau này
@@ -76,11 +70,12 @@ class CNFGenerator:
             self.cnf.append([-exist, v1, v2])
             self.cnf.append([-v1, exist])
             self.cnf.append([-v2, exist])
+            self.cnf.append([-v1, -v2])
 
         # 2. Ràng buộc số lượng cầu tại mỗi đảo (Degree)
         for island, need in self.puzzle.islands.items():
             related = []
-            for (a, b), (v0, v1, v2) in self.bridge_vars_cache.items():
+            for (a, b), (v1, v2) in self.bridge_vars_cache.items():
                 if island == a or island == b:
                     related.append((1, v1)) # v1 trọng số 1
                     related.append((2, v2)) # v2 trọng số 2
