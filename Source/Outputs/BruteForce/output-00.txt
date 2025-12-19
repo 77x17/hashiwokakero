@@ -1,0 +1,8 @@
+[ "2" , "-" , "2" ]
+[ "|" , "0" , "|" ]
+[ "2" , "-" , "2" ]
+
+[BruteForce STATS]
+Expanded nodes    : 44
+Time (ms)         : 0.14
+Total bridges     : 4

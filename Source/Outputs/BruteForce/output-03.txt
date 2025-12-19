@@ -8,5 +8,5 @@
 
 [BruteForce STATS]
 Expanded nodes    : 2608417
-Time (ms)         : 8668.67
+Time (ms)         : 8941.59
 Total bridges     : 18
