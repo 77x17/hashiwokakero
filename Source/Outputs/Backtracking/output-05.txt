@@ -11,5 +11,5 @@
 
 [Backtracking STATS]
 Recursion calls   : 35117
-Time (ms)         : 104.56
+Time (ms)         : 45.44
 Total bridges     : 23

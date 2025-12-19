@@ -11,5 +11,5 @@
 
 [PySAT STATS]
 Variables         : 69
-Time (ms)         : 0.14
+Time (ms)         : 0.13
 Total bridges     : 23

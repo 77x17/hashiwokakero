@@ -8,5 +8,5 @@
 
 [A* STATS]
 Expanded states : 5520
-Time (ms)       : 356.70
+Time (ms)       : 329.23
 Total bridges   : 15
